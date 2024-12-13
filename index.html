@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+        .section h2 {
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to E-Learning Platform</h1>
+    </header>
+    <div class="container">
+        <!-- Video Tutorials Section -->
+        <div class="section" id="video-tutorials">
+            <h2>Video Tutorials</h2>
+            <p>Explore our comprehensive video tutorials to master new skills.</p>
+            <button class="btn">Watch Now</button>
+        </div>
+
+        <!-- Quizzes Section -->
+        <div class="section" id="quizzes">
+            <h2>Quizzes</h2>
+            <p>Test your knowledge with our interactive quizzes.</p>
+            <button class="btn">Start Quiz</button>
+        </div>
+
+        <!-- Notes Section -->
+        <div class="section" id="notes">
+            <h2>Notes</h2>
+            <p>Download notes to support your learning journey.</p>
+            <button class="btn">Download Notes</button>
+        </div>
+
+        <!-- AI Teacher Section -->
+        <div class="section" id="ai-teacher">
+            <h2>AI Teacher</h2>
+            <p>Interact with our AI-powered teacher for personalized assistance.</p>
+            <button class="btn">Ask AI</button>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('This feature is under development. Stay tuned!');
+            });
+        });
+    </script>
+</body>
+</html>
