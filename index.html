@@ -3,88 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Learning Platform</title>
+    <title>Learnify - E-Learning Platform</title>
     <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #ffffff;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --button-hover: #45a049;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--secondary-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            list-style: none;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            display: flex;
+            gap: 1rem;
         }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .section {
-            margin-bottom: 2rem;
-        }
-        .section h2 {
-            color: #333;
-        }
-        .btn {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            color: white;
-            background-color: #4CAF50;
-            border: none;
-            border-radius: 5px;
+
+        nav a {
+            color: var(--secondary-color);
             text-decoration: none;
-            cursor: pointer;
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
-        .btn:hover {
-            background-color: #45a049;
+
+        nav a:hover {
+            color: var(--button-hover);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(to right, #4caf50, #81c784);
+            color: var(--secondary-color);
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin: 0 0 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 0.5rem 0;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            padding: 0 1rem;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .card a {
+            display: inline-block;
+            margin: 1rem 0;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card a:hover {
+            background-color: var(--button-hover);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to E-Learning Platform</h1>
+        <h1>Learnify</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Notes</a></li>
+                <li><a href="#">Videos</a></li>
+                <li><a href="#">Quizzes</a></li>
+                <li><a href="#">AI Teacher</a></li>
+            </ul>
+        </nav>
     </header>
-    <div class="container">
-        <!-- Video Tutorials Section -->
-        <div class="section" id="video-tutorials">
-            <h2>Video Tutorials</h2>
-            <p>Explore our comprehensive video tutorials to master new skills.</p>
-            <button class="btn">Watch Now</button>
+
+    <div class="hero">
+        <h2>Welcome to Learnify</h2>
+        <p>Your ultimate online learning platform with Notes, Video Tutorials, Quizzes, and an AI Virtual Teacher to guide your journey!</p>
+    </div>
+
+    <div class="content">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1584697964192-6ac86f8a9abf" alt="Notes">
+            <h3>Notes</h3>
+            <p>Access organized, easy-to-read notes to enhance your learning experience.</p>
+            <a href="#">Learn More</a>
         </div>
 
-        <!-- Quizzes Section -->
-        <div class="section" id="quizzes">
-            <h2>Quizzes</h2>
-            <p>Test your knowledge with our interactive quizzes.</p>
-            <button class="btn">Start Quiz</button>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1573497019413-4296a6f5d0c4" alt="Video Tutorials">
+            <h3>Video Tutorials</h3>
+            <p>Engage with interactive and comprehensive video lessons on a variety of topics.</p>
+            <a href="#">Watch Now</a>
         </div>
 
-        <!-- Notes Section -->
-        <div class="section" id="notes">
-            <h2>Notes</h2>
-            <p>Download notes to support your learning journey.</p>
-            <button class="btn">Download Notes</button>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1581093588401-287563c87b3b" alt="Quizzes">
+            <h3>Quizzes</h3>
+            <p>Test your knowledge with fun and challenging quizzes.</p>
+            <a href="#">Start Quiz</a>
         </div>
 
-        <!-- AI Teacher Section -->
-        <div class="section" id="ai-teacher">
-            <h2>AI Teacher</h2>
-            <p>Interact with our AI-powered teacher for personalized assistance.</p>
-            <button class="href" href="https://learnifyi.netlify.app/ai.html">Ask AI</button>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1611078483693-9d5e88c7b4b1" alt="AI Virtual Teacher">
+            <h3>AI Virtual Teacher</h3>
+            <p>Get personalized guidance and answers from our AI-powered virtual teacher.</p>
+            <a href="ai.html">Meet AI</a>
         </div>
     </div>
 
-    <script>
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', () => {
-                alert('This feature is under development. Stay tuned!');
-            });
-        });
-    </script>
+    <footer>
+        <p>&copy; 2024 Learnify. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
