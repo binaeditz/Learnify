@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learnify - Python Programming Course</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-scholar.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <style>
+    .like-comment {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .like-comment h4 {
+      margin-bottom: 20px;
+    }
+    .like-comment button {
+      display: flex;
+      align-items: center;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .like-comment button:hover {
+      background: #0056b3;
+    }
+    .like-comment button i {
+      margin-right: 10px;
+    }
+    .like-comment #like-count {
+      margin-left: 10px;
+      font-weight: bold;
+    }
+    .comment-section {
+      margin-top: 20px;
+    }
+    .comment-section textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+    .comment-section button {
+      background: #28a745;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .comment-section button:hover {
+      background: #218838;
+    }
+    .comment-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .comment-section ul li {
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    .ai-section {
+      background: #e9ecef;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+    .ai-section h4 {
+      margin-bottom: 20px;
+    }
+    .ai-section input {
+      width: calc(100% - 50px);
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      margin-right: 10px;
+    }
+    .ai-section button {
+      background: #17a2b8;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .ai-section button:hover {
+      background: #138496;
+    }
+    .chat-container {
+      margin-top: 20px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .message {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    .message .icon {
+      margin-right: 10px;
+    }
+    .message .text {
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 80%;
+    }
+    .message.incoming .text {
+      background: #e9ecef;
+    }
+    .message.loading .text {
+      background: #f1f1f1;
+      color: #ccc;
+    }
+    .notes, .summary, .quiz {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .notes h4, .summary h4, .quiz h4 {
+      margin-bottom: 15px;
+      font-size: 1.5em;
+      color: #333;
+    }
+    .notes p, .summary p, .quiz p {
+      font-size: 1em;
+      line-height: 1.6;
+      color: #555;
+    }
+    .notes a, .quiz a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .notes a:hover, .quiz a:hover {
+      text-decoration: underline;
+    }
+    .summary ul {
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+    .summary ul li {
+      margin-bottom: 10px;
+      font-size: 1em;
+      color: #555;
+    }
+    .summary ul li strong {
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <h1>Learnify</h1>
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="index.html#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="index.html#services">Services</a></li>
+              <li class="scroll-to-section"><a href="index.html#courses">Courses</a></li>
+              <li class="scroll-to-section"><a href="index.html#contact">Contact</a></li>
+              <li class="scroll-to-section"><a href="https://learnifyi.netlify.app/ai">Live AI Teacher</a></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Python Programming Course</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="course-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="video-container">
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/ix9cRaBkVe0?si=np9BZYH4OZXYP-HI" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="notes">
+            <h4>Course Notes</h4>
+            <p>Notes are not available now <a href="assets/notes/python-programming-notes.pdf" target="_blank"></a>.</p>
+            <div class="summary">
+              <h4>Summary</h4>
+              <p>In this extensive video tutorial, the instructor provides a comprehensive introduction to coding with Python, aimed primarily at beginners. The course covers a wide range of topics essential for understanding and utilizing the Python programming language, including installation, basic programming concepts, data types, variables, control structures, functions, and more. Throughout the video, the instructor emphasizes hands-on learning by integrating 20 different projects, culminating in the development of a weather app that fetches real-time data from an API.</p>
+              <p>The tutorial begins with guidance on downloading and installing the Python interpreter and an Integrated Development Environment (IDE), specifically recommending PyCharm for beginners. The instructor quickly moves on to demonstrate basic programming syntax, such as printing to the console, writing comments, and defining variables. A focus is placed on the four primary data types in Python: strings, integers, floats, and booleans, along with practical examples and exercises to solidify understanding.</p>
+              <p>As the tutorial progresses, the instructor introduces more advanced concepts such as type casting, user inputs, arithmetic operations, conditional statements (if-else), loops (both while and for), and data collections (lists, tuples, and sets). Each concept is reinforced through examples, helping viewers grasp how to apply these principles in real coding scenarios. The instructor also illustrates how to manage user input effectively, handle logical conditions, and implement nested loops and functions.</p>
+              <p>In addition to the core programming concepts, the instructor covers several practical projects, including a Mad Libs game, a basic calculator, a weight converter, and a temperature conversion program. Each project serves as an opportunity to apply what has been learned in a hands-on manner. The video also includes exercises that encourage viewers to engage actively with the material.</p>
+              <h4>Highlights</h4>
+              <ul>
+                <li>🐍 <strong>Introduction to Python</strong>: A comprehensive guide for beginners to start coding in Python.</li>
+                <li>💻 <strong>Installation Guide</strong>: Step-by-step instructions on downloading Python and setting up PyCharm IDE.</li>
+                <li>📊 <strong>Core Data Types</strong>: Detailed explanation of strings, integers, floats, and booleans with practical examples.</li>
+                <li>🔄 <strong>Control Structures</strong>: Insight into if-else statements, loops (while and for), and how they control program flow.</li>
+                <li>⚙️ <strong>Hands-On Projects</strong>: Implementation of 20 projects, including a weather app, to reinforce learning through practice.</li>
+                <li>🧮 <strong>User Input Management</strong>: Techniques to accept and validate user inputs effectively in Python code.</li>
+                <li>📚 <strong>Collections Overview</strong>: Introduction to lists, tuples, and sets for managing collections of data.</li>
+              </ul>
+              <h4>Key Insights</h4>
+              <ul>
+                <li>🎯 <strong>Importance of Hands-On Learning</strong>: The tutorial emphasizes that engaging with practical projects, such as creating a weather app, solidifies understanding. By completing exercises, learners can see how theoretical concepts apply in real-world scenarios, making the learning process more effective and enjoyable.</li>
+                <li>🛠️ <strong>Setting Up the Environment</strong>: Proper installation of Python and an IDE is crucial for beginners. The instructor's recommendation of PyCharm, particularly its community version, highlights the importance of using user-friendly tools that are accessible without financial investment, making programming more approachable.</li>
+                <li>🔍 <strong>Understanding Data Types</strong>: The detailed explanation of data types, including practical examples, equips learners with the foundational knowledge needed to manipulate and utilize data effectively. This understanding is essential for writing functional and efficient code in Python.</li>
+                <li>🔗 <strong>Control Structures and Logic</strong>: Control structures like if-else statements and loops are fundamental to programming logic. The instructor illustrates how these structures dictate the flow of a program, enabling users to make decisions and perform repetitive tasks, which are common in coding.</li>
+                <li>🚀 <strong>Projects as Learning Tools</strong>: Each project, such as the Mad Libs game and the basic calculator, serves as a practical application of learned concepts. This project-based approach not only makes learning interactive but also helps reinforce the knowledge gained throughout the tutorial.</li>
+                <li>✏️ <strong>Input Validation</strong>: The tutorial provides insight into how to effectively manage user inputs, an essential skill for building robust applications. Understanding how to validate and handle inputs prevents errors and improves user experience.</li>
+                <li>📦 <strong>Collections and Data Management</strong>: The introduction to collections like lists, tuples, and sets allows learners to understand how to manage groups of data efficiently. This knowledge is vital for any programmer, as data management is a core component of software development.</li>
+              </ul>
+              <p>In summary, this video serves as a robust foundation for anyone looking to learn Python programming, with a strong focus on practical applications and hands-on projects. It equips beginners with the necessary tools, concepts, and skills to embark on their coding journey confidently.</p>
+            </div>
+          </div>
+          <div class="quiz">
+            <h4>Quiz</h4>
+            <p>Test your knowledge by taking the quiz <a href="https://docs.google.com/forms/d/e/1FAIpQLSd8sdQND-cws6Nlkz6wQPkKG_lPK1zC2VV87i1LMtK9Ad4AgQ/viewform?usp=dialog" target="_blank">here</a>.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="ai-section">
+            <h4>Ask about the Course</h4>
+            <div>
+              <input type="text" id="ai-question" placeholder="Ask a question...">
+              <button id="ai-submit"><i class="fa fa-paper-plane"></i> Ask</button>
+            </div>
+            <div id="chat-container" class="chat-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // API configuration
+    const API_KEY = "AIzaSyBXhfgDULBLQjzG6uASBsL9xDp6u_39vtQ"; // Your API key here
+    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${API_KEY}`;
+
+    // Show typing effect by displaying words one by one
+    const showTypingEffect = (text, textElement, incomingMessageDiv) => {
+      const words = text.split(' ');
+      let currentWordIndex = 0;
+
+      const typingInterval = setInterval(() => {
+        // Append each word to the text element with a space
+        textElement.innerText += (currentWordIndex === 0 ? '' : ' ') + words[currentWordIndex++];
+        incomingMessageDiv.querySelector(".icon").classList.add("hide");
+
+        // If all words are displayed
+        if (currentWordIndex === words.length) {
+          clearInterval(typingInterval);
+          isResponseGenerating = false;
+          incomingMessageDiv.querySelector(".icon").classList.remove("hide");
+          localStorage.setItem("saved-chats", chatContainer.innerHTML); // Save chats to local storage
+        }
+        chatContainer.scrollTo(0, chatContainer.scrollHeight); // Scroll to the bottom
+      }, 75);
+    }
+
+    // Fetch response from the API based on user message
+    const generateAPIResponse = async (userMessage, incomingMessageDiv) => {
+      const textElement = incomingMessageDiv.querySelector(".text"); // Getting text element
+
+      try {
+        // Send a POST request to the API with the user's message
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ 
+            contents: [{ 
+              role: "user", 
+              parts: [{ text: "You are a virtual AI teacher in Learnify, an advanced coding and software development E-Learning platform. Your role is to guide students through the Python programming course, help debug their code, explain software development principles, provide coding exercises, answer technical questions, and offer constructive feedback on their projects. You should maintain a supportive and encouraging teaching style, break down complex concepts into understandable steps, and adapt your explanations based on the student's skill level. You must provide code examples when relevant and suggest best practices for software development. You are powered by AI called Nexio that developed by Nexios company. Here is the student's message: " + userMessage }] 
+            }] 
+          }),
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error.message);
+
+        // Get the API response text and remove asterisks from it
+        const apiResponse = data?.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, '$1');
+        showTypingEffect(apiResponse, textElement, incomingMessageDiv); // Show typing effect
+      } catch (error) { // Handle error
+        isResponseGenerating = false;
+        textElement.innerText = error.message;
+        textElement.parentElement.closest(".message").classList.add("error");
+      } finally {
+        incomingMessageDiv.classList.remove("loading");
+      }
+    }
+
+    document.getElementById('like-button').addEventListener('click', function() {
+      let likeCount = document.getElementById('like-count');
+      likeCount.textContent = parseInt(likeCount.textContent) + 1;
+    });
+
+    document.getElementById('comment-button').addEventListener('click', function() {
+      let comment = document.getElementById('comment').value;
+      if (comment) {
+        let commentList = document.getElementById('comment-list');
+        let newComment = document.createElement('li');
+        newComment.textContent = comment;
+        commentList.appendChild(newComment);
+        document.getElementById('comment').value = '';
+      }
+    });
+
+    document.getElementById('ai-submit').addEventListener('click', function() {
+      let question = document.getElementById('ai-question').value;
+      if (question) {
+        const incomingMessageDiv = document.createElement('div');
+        incomingMessageDiv.classList.add('message', 'incoming', 'loading');
+        incomingMessageDiv.innerHTML = `<div class="icon"><i class="fa fa-robot"></i></div><div class="text"></div>`;
+        document.getElementById('chat-container').appendChild(incomingMessageDiv);
+        generateAPIResponse(question, incomingMessageDiv);
+      }
+    });
+  </script>
+</body>
+
+</html>
